@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Plagiarism Checker</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}" />
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">AuthenTech🌐</div>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/login">Login</a></li>
+      <li><a href="/register">Signup</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>AI-Powered Plagiarism Detection</h1>
+      <p>Quickly check your documents for originality and improve your work!</p>
+      <div class="buttons">
+        <a href="/upload" class="btn">Upload Now</a>
+        <a href="/upload" class="btn-secondary">Try Demo</a>
+      </div>
+    </div>
+    <div class="hero-animation">
+      <lottie-player 
+        src="https://assets10.lottiefiles.com/packages/lf20_jcikwtux.json"
+        background="transparent" 
+        speed="1" 
+        style="width: 400px; height: 400px;" 
+        loop 
+        autoplay>
+      </lottie-player>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Plagiarism Checker Project.Built by Chandini</p>
+  </footer>
+</body>
+</html>
