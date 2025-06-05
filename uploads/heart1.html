@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: url('https://i.pinimg.com/736x/10/20/4e/10204e2cf94ed01b71805a97cdf1047b.jpg');
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .frame {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            gap: 30px;
+            padding: 20px;
+        }
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        input, select {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            width: 270px;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .predict-btn {
+            padding: 12px 30px;
+            font-size: 18px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            align-self: center;
+        }
+        .predict-btn:hover {
+            background-color: #ff6666;
+        }
+        .logout-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff4444;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .logout-btn:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="logout()" class="logout-btn">Logout</button>
+
+    <div class="frame">
+        <h1>Know Your Heart Better ❤️</h1>
+
+        <form action="/predict" method="post">
+            <div class="container">
+                <div class="column">
+                    <input type="text" name="age" placeholder="Age..." required>
+                    <input type="text" name="gender" placeholder="Gender (0=F, 1=M)..." required>
+
+                    <!-- Dropdown for Chest Pain Type -->
+                    <select name="chest_pain" required>
+                        <option value="" disabled selected>Select Chest Pain Type</option>
+                        <option value="1">Typical Angina(TA)-1</option>
+                        <option value="2">Atypical Angina (ATA)-2</option>
+                        <option value="3">Non-Anginal Pain (NAP)-3</option>
+                        <option value="4">Asymptomatic (ASY)-3</option>
+                    </select>
+
+                    <input type="text" name="resting_bp" placeholder="Resting Blood Pressure..." required>
+                    <input type="text" name="serum_cholesterol" placeholder="Serum Cholesterol..." required>
+
+                    <!-- Dropdown for Fasting Blood Sugar -->
+                    <select name="fasting_blood_sugar" required>
+                        <option value="" disabled selected>Fasting Blood Sugar</option>
+                        <option value="0">0 - No Sugar</option>
+                        <option value="1">1 - Has Sugar</option>
+                    </select>
+                </div>
+
+                <div class="column">
+                    <!-- Dropdown for Resting ECG -->
+                    <select name="resting_ecg" required>
+                        <option value="" disabled selected>Resting ECG (0-2)</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+
+                    <input type="text" name="max_heart_rate" placeholder="Max Heart Rate..." required>
+
+                    <!-- Dropdown for Exercise Induced Angina -->
+                    <select name="exercise_angina" required>
+                        <option value="" disabled selected>Exercise Induced Angina</option>
+                        <option value="0">0 - No</option>
+                        <option value="1">1 - Yes</option>
+                    </select>
+
+                    <!-- Dropdown for ST Depression -->
+                    <select name="st_depression" required>
+                        <option value="" disabled selected>ST Depression (0-2)</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+
+                    <!-- Dropdown for Slope ST Segment -->
+                    <select name="slope_st" required>
+                        <option value="" disabled selected>Slope ST Segment (0-2)</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Predict button centered -->
+            <button type="submit" class="predict-btn">Predict</button>
+        </form>
+    </div>
+
+    <script>
+        function logout() {
+            window.location.href = "/logout";
+        }
+    </script>
+</body>
+</html>

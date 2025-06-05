@@ -1,0 +1,116 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f6fa;
+  color: #2f3640;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2f3640;
+  padding: 15px 30px;
+  color: white;
+}
+
+.navbar .logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links li a:hover {
+  color: #00a8ff;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 30px;
+}
+
+.hero-text {
+  max-width: 50%;
+}
+
+.hero-text h1 {
+  font-size: 38px;
+  margin-bottom: 15px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.buttons .btn, .buttons .btn-secondary {
+  padding: 10px 20px;
+  margin-right: 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn {
+  background-color: #273c75;
+  color: white;
+}
+
+.btn:hover {
+  background-color: #192a56;
+}
+
+.btn-secondary {
+  background-color: #dcdde1;
+  color: #2f3640;
+}
+
+.btn-secondary:hover {
+  background-color: #b2bec3;
+}
+
+/* Animation Section */
+.hero-animation {
+  max-width: 400px;
+}
+
+/* Footer */
+footer {
+  background-color: #2f3640;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
+}
+.about-section {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.7;
+}
+
+.about-section h1, .about-section h2 {
+  color: #333;
+  margin-top: 30px;
+}
+
+.about-section ul {
+  margin-left: 20px;
+  padding-left: 20px;
+}

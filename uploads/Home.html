@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Detector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8f8f8;
+        }
+        .container {
+            background: linear-gradient(to right, #ffcccc, #c2e0c6);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 500px;
+        }
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+        }
+        p {
+            font-size: 16px;
+            color: #333;
+        }
+        .btn {
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+        .btn:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Heart Disease Detector</h1>
+        <p>"A healthy heart is a key to a healthy life. Early detection saves lives."</p>
+        <a href="login.html">
+            <button class="btn">Get Started</button>
+        </a>        
+    </div>
+
+    <script>
+        document.getElementById("getStartedBtn").addEventListener("click", function() {
+            window.location.href = "mini/templates/login.html"; // Update this if your login page has a different name
+        });
+    </script>
+
+</body>
+</html>

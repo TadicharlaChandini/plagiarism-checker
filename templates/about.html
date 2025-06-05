@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About | Plagiarism Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            background-color: #f7f9fc;
+        }
+        .container {
+            max-width: 960px;
+            margin: 80px auto;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        p {
+            font-size: 1.1em;
+            line-height: 1.7;
+            color: #555;
+            margin-top: 20px;
+        }
+        .highlight {
+            color: #34495e;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="container">
+        <h1>About This Project</h1>
+        <p>
+            Welcome to the <span class="highlight">AI-Powered Plagiarism Checker</span>, developed as a full-stack web application using <span class="highlight">Flask, SQLite, HTML, and CSS</span>.
+        </p>
+        <p>
+            This platform allows users to upload and compare documents in multiple formats including PDF, DOCX, TXT, and even code files like Python, Java, and HTML. It tokenizes content, filters out comments, and compares with previously stored documents for potential similarities.
+        </p>
+        <p>
+            It was built with the intention to help students, educators, and professionals maintain originality and avoid plagiarism using smart comparison algorithms.
+        </p>
+        <p>
+            Designed and developed by <strong>Chandini Tadicharla</strong> as part of a passion project to apply AI and web development in real-world problem-solving.
+        </p>
+        <p>
+            💡 Your feedback and suggestions are always welcome!
+        </p>
+        <div class="dev-section">
+      <h2>👩‍💻 Developed By:</h2>
+      <p>
+        <strong>Tadicharla Chandini</strong><br>
+        B.Tech in Artificial Intelligence and Data Science<br>
+        <a href="mailto:tadicharlachandini@gmail.com">tadicharlachandini@gmail.com</a><br>
+        <a href="https://github.com/TadicharlaChandini" target="_blank">GitHub</a> |
+        <a href="https://www.linkedin.com/in/chandini-tadicharla-5952022a6/" target="_blank">LinkedIn</a>
+      </p>
+    </div>
+  </div>
+    </div>
+</body>
+</html>

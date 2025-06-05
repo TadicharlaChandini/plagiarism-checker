@@ -1,0 +1,21 @@
+<!-- templates/upload.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card shadow p-4">
+    <h2 class="text-center mb-4">Upload a File (Text or Code) for Plagiarism Check</h2>
+<form action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="file" class="form-label">Upload Main File</label>
+        <input class="form-control" type="file" name="file" required>
+    </div>
+    <div class="mb-3">
+        <label for="compare_file" class="form-label">Optional Comparison File</label>
+        <input class="form-control" type="file" name="compare_file">
+    </div>
+    <div class="d-grid">
+        <button type="submit" class="btn btn-primary">Check</button>
+    </div>
+</form>
+</div>
+{% endblock %}

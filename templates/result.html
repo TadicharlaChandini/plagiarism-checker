@@ -1,0 +1,60 @@
+<!-- templates/result.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card shadow p-4">
+    <h2 class="text-center mb-4">Plagiarism Report</h2>
+
+    <h5>Uploaded File: <span class="text-primary">{{ filename }}</span></h5>
+    <hr>
+
+    <h5>Extracted Text:</h5>
+    <div class="p-3 mb-4 bg-light border rounded" style="max-height: 300px; overflow-y: auto;">
+    <pre><code class="language-{{ filetype }}">{{ text }}</code></pre>
+    </div>
+
+    {% if compare_filename %}
+        <h5>Comparison File: <span class="text-success">{{ compare_filename }}</span></h5>
+
+        <h5>Comparison Text:</h5>
+        <div class="p-3 mb-4 bg-light border rounded" style="max-height: 300px; overflow-y: auto; white-space: pre-wrap;">
+            {{ compare_text }}
+        </div>
+
+        <h5>Direct Similarity Between Uploaded & Comparison File:</h5>
+        <div class="alert alert-info">
+            Similarity: <strong>{{ similarity }}%</strong>
+        </div>
+    {% endif %}
+    {% if diff_html %}
+        <h5 class="mt-4">Side-by-Side Code Comparison:</h5>
+        <div class="table-responsive bg-white border rounded p-3 mb-4" style="font-family: monospace; font-size: 14px; max-height: 400px; overflow-x: auto;">
+            {{ diff_html|safe }}
+        </div>
+    {% endif %}
+
+
+    <hr>
+    <h5>Plagiarism Report Against Stored Documents:</h5>
+    {% if results %}
+        <table class="table table-bordered table-striped">
+            <thead class="table-light">
+                <tr>
+                    <th scope="col">Compared File</th>
+                    <th scope="col">Similarity (%)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for file, score in results %}
+                <tr>
+                    <td>{{ file }}</td>
+                    <td>{{ score }}%</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p class="text-muted">No stored documents were found to compare with.</p>
+    {% endif %}
+</div>
+{% endblock %}

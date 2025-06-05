@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card shadow p-4">
+    <h2 class="text-center mb-4">Your Plagiarism Check History</h2>
+
+    {% if history %}
+        <table class="table table-bordered table-striped">
+            <thead class="table-light">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Filename</th>
+                    <th scope="col">Similarity (%)</th>
+                    <th scope="col">Checked At</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for idx, entry in enumerate(history, 1) %}
+                <tr>
+                    <th scope="row">{{ idx }}</th>
+                    <td>{{ entry[0] }}</td>
+                    <td>{{ entry[1] }}%</td>
+                    <td>{{ entry[2] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <div class="alert alert-info text-center">
+            You have not submitted any files yet.
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
