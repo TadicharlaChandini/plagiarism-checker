@@ -78,7 +78,7 @@ python app.py
 🌐 Deployment
 The app is planned to be deployed using Render for free public access. Stay tuned for the live link!
 Here is the link:
-https://github.com/TadicharlaChandini/plagiarism-checker/tree/main
+https://plagiarism-checker-98ds.onrender.com
 
 📜 License
 This project is open-source and free to use for academic purposes.
